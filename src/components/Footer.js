@@ -4,20 +4,20 @@ import { Container, Row, Col } from 'react-bootstrap';
 const Footer = () => {
     return (
         <footer>
-            <Container className="p-4">
+            <Container className="my-4">
                 <Row>
-                    <Col>
+                    <Col xs={12} sm={4}>
                         <h4>Job Seekers</h4>
                         <p>Build a Resume</p>
                         <p>Samples</p>
                     </Col>
-                    <Col>
+                    <Col xs={12} sm={4}>
                         <h4>Need Help?</h4>
                         <p>Privacy Policy</p>
                         <p>Terms and Condition</p>
                         <p>About Us</p>
                     </Col>
-                    <Col>
+                    <Col xs={12} sm={4}>
                         <h4>Stay Connected</h4>
 
                     </Col>
