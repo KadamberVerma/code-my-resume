@@ -1,6 +1,38 @@
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+a {
+	text-decoration: none;
+}
+
+.social-login-btn-group {
+	width: 10rem;
+}
+
+.google-btn {
+	background-color: #df4930;
+	border-color: #df4930;
+}
+
+.facebook-btn {
+	background-color: #507cc0;
+	border-color: #507cc0;
+}
+
+.github-btn {
+	background-color: #000;
+	border-color: #000;
+}
+
+span.text-disclaimer {
+	display: inline-block;
+	font-style: italic;
+	font-size: 0.65em;
+	transform-origin: center;
+	opacity: 0.7;
+}
+
+.about-us li {
+	list-style-type: none;
+}
+
+footer a {
+	color: #fff;
 }

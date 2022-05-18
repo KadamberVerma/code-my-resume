@@ -1,26 +1,67 @@
 import React from 'react';
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Navbar, Nav, Container, NavDropdown, Col } from 'react-bootstrap';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Header = () => {
-    return (
-        <Navbar bg="dark" expand="lg" className="mb-4" >
-            <Container>
-                <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link>Home</Nav.Link>
-                        <Nav.Link>Sign in</Nav.Link>
-                        <NavDropdown title="Resume" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Resume Builder</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Resume Samples</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">How to Write a Resume</NavDropdown.Item>
-                        </NavDropdown>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-    )
-}
+	const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+
+	return (
+		<Navbar
+			bg="light"
+			expand="lg"
+			className="mb-4 shadow p-3 mb-5 bg-body rounded"
+			sticky="top"
+		>
+			<Container className="justify-content-between">
+				<Col xs={12} md={6} className="my-3">
+					<LinkContainer to="/">
+						<Navbar.Brand>CodeMyResume</Navbar.Brand>
+					</LinkContainer>
+				</Col>
+				<Col xs={12} md={6} className="my-3">
+					<Navbar.Toggle aria-controls="basic-navbar-nav" />
+					<Navbar.Collapse id="basic-navbar-nav">
+						<Nav className="me-auto">
+							<LinkContainer to="/">
+								<Nav.Link>Home</Nav.Link>
+							</LinkContainer>
+
+							{!isAuthenticated && (
+								<Nav.Link onClick={() => loginWithRedirect()}>
+									Login
+								</Nav.Link>
+							)}
+							{isAuthenticated && (
+								<Nav.Link onClick={() => logout()}>
+									Logout
+								</Nav.Link>
+							)}
+
+							{isAuthenticated && (
+								<LinkContainer to="/profile">
+									<Nav.Link>Profile</Nav.Link>
+								</LinkContainer>
+							)}
+
+							<NavDropdown title="Resume" id="basic-nav-dropdown">
+								<LinkContainer to="/build-a-resume">
+									<NavDropdown.Item>
+										Resume Builder
+									</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to="/samples">
+									<NavDropdown.Item>
+										Resume Samples
+									</NavDropdown.Item>
+								</LinkContainer>
+							</NavDropdown>
+						</Nav>
+					</Navbar.Collapse>
+				</Col>
+			</Container>
+		</Navbar>
+	);
+};
 
 export default Header;
