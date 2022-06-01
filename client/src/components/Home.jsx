@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <Container className="my-5 home">
       <Row style={{ backgroundColor: "#fff" }}>
-        <Col xs={6}>
+        <Col className="left-hero-section" xs={6}>
           <h1 className="mb-4">
             Build a professional
             <br />
@@ -18,9 +18,13 @@ const Home = () => {
             and professional templates.
           </p>
           <LinkContainer to="/create-my-resume">
-            <Button variant="outline-primary">Create My Resume</Button>
+            <Button variant="outline-primary">CODE MY RESUME</Button>
           </LinkContainer>
+          <Row>
+            <Image fluid src="/images/hero-2.png" alt="hero" />
+          </Row>
         </Col>
+
         <Col xs={6}>
           <Image fluid src="/images/hero.png" alt="hero" />
         </Col>
@@ -61,7 +65,7 @@ const Home = () => {
           </h2>
           <Col xs={8} className="my-4">
             <LinkContainer to="/create-my-resume">
-              <Button variant="outline-primary">Create My Resume</Button>
+              <Button variant="outline-primary">CODE MY RESUME</Button>
             </LinkContainer>
           </Col>
         </Col>
