@@ -9,11 +9,8 @@ const Footer = () => {
 				<Row className="my-4">
 					<Col xs={12} sm={4}>
 						<h4 className="mb-4">Job Seekers</h4>
-						<Link to="/build-a-resume">
+						<Link to="/create-my-resume">
 							<p>Build a Resume</p>
-						</Link>
-						<Link to="/samples">
-							<p>Samples</p>
 						</Link>
 					</Col>
 					<Col xs={12} sm={4}>

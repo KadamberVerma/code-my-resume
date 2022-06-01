@@ -9,6 +9,8 @@ import PageNotFound from './PageNotFound';
 import TermsAndCondition from './TermsAndCondition';
 import AboutUs from './AboutUs';
 import Profile from './Profile';
+import ResumeBuilder from './ResumeBuilder';
+import ProtectedRoute from './ProtectedRoute';
 
 const App = () => {
 	return (
@@ -23,7 +25,14 @@ const App = () => {
 					element={<TermsAndCondition />}
 				/>
 				<Route path="/about-us" element={<AboutUs />} />
-				<Route path="/profile" element={<Profile />} />
+				<Route
+					path="/profile"
+					element={<ProtectedRoute component={Profile} />}
+				/>
+				<Route
+					path="/create-my-resume"
+					element={<ProtectedRoute component={ResumeBuilder} />}
+				/>
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>
 			<Footer />

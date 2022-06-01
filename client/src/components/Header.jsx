@@ -45,14 +45,9 @@ const Header = () => {
 							)}
 
 							<NavDropdown title="Resume" id="basic-nav-dropdown">
-								<LinkContainer to="/build-a-resume">
+								<LinkContainer to="/create-my-resume">
 									<NavDropdown.Item>
 										Resume Builder
-									</NavDropdown.Item>
-								</LinkContainer>
-								<LinkContainer to="/samples">
-									<NavDropdown.Item>
-										Resume Samples
 									</NavDropdown.Item>
 								</LinkContainer>
 							</NavDropdown>
